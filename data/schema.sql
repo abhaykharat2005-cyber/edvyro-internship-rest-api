@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS internships (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  title TEXT NOT NULL,
+  domain TEXT NOT NULL,
+  mode TEXT NOT NULL CHECK(mode IN ('Remote','On-site','Hybrid')),
+  location TEXT NOT NULL,
+  skills TEXT NOT NULL DEFAULT '[]',
+  openings INTEGER NOT NULL DEFAULT 1 CHECK(openings > 0),
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

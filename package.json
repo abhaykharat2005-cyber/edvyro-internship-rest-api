@@ -1,0 +1,11 @@
+{
+  "name": "edvyro-abhiraj-internship-api",
+  "version": "1.0.0",
+  "description": "Abhiraj's Internship REST API submission for EdVyro Task 2",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {"start":"node src/server.js", "dev":"node --watch src/server.js", "test":"vitest run", "test:watch":"vitest"},
+  "engines": {"node": ">=18"},
+  "dependencies": {"cors":"^2.8.5", "dotenv":"^16.4.7", "express":"^4.21.2", "helmet":"^8.0.0", "sqlite3":"^5.1.7", "zod":"^3.24.2"},
+  "devDependencies": {"supertest":"^7.0.0", "vitest":"^2.1.8"}
+}

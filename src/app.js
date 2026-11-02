@@ -1,0 +1,13 @@
+import express from 'express';
+import cors from 'cors';
+import helmet from 'helmet';
+import internshipRoutes from './routes/internshipRoutes.js';
+import { errorHandler, notFound } from './middleware/errorHandler.js';
+export const app = express();
+app.use(helmet());
+app.use(cors({ origin: process.env.CORS_ORIGIN?.split(',') || true }));
+app.use(express.json({ limit: '20kb' }));
+app.get('/api/health', (req,res) => res.json({success:true,data:{status:'healthy',service:'Abhiraj Internship API',timestamp:new Date().toISOString()}}));
+app.use('/api/internships', internshipRoutes);
+app.use(notFound);
+app.use(errorHandler);
